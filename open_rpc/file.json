@@ -1,0 +1,92 @@
+{
+    "openrpc": "1.2.6",
+    "info": {
+        "version": "1.0.0",
+        "title": "Pizza Service"
+    },
+    "methods": [
+        {
+            "name": "get_pizza",
+            "description": "Returns the pizza's name, count and price",
+            "params": [
+                {
+                    "name": "name",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "required": true,
+                    "description": "The pizza's name"
+                },
+                {
+                    "name": "count",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "required": true,
+                    "description": "The pizza's count"
+                },
+                {
+                    "name": "price",
+                    "schema": {
+                        "type": "integer"
+                    },
+                    "required": true,
+                    "description": "The pizza's price"
+                }
+            ],
+            "result": {
+                "type": "object",
+                "description": "Order details",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "string",
+                            "description": "Order status"
+                        },
+                        "order_id": {
+                            "type": "interger",
+                            "description": "Order ID"
+                        }
+                    }
+                }
+            },
+            "errors": [
+                {
+                    "code": -32601,
+                    "message": "Method not found",
+                    "data": {
+                        "type": "null"
+                    }
+                }
+            ],
+            "examples": [
+                {
+                    "name": "getPizzaExample",
+                    "description": "Order a large pizza",
+                    "params": [
+                        {
+                            "name": "name",
+                            "value": "Large"
+                        },
+                        {
+                            "name": "count",
+                            "value": 2
+                        },
+                        {
+                            "name": "price",
+                            "value": 100
+                        }
+                    ],
+                    "result": {
+                        "name": "getPizzaResultExample",
+                        "value": {
+                            "status": "success",
+                            "order_id": 108
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
