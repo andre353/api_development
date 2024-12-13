@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<squad>
+
+    <squadName>Super hero squad</squadName>
+    
+    <formed>2016</formed>
+    
+    <active>true</active>
+
+    <members>
+    
+        <member>
+        
+            <name>Man</name>
+            
+            <lastname>null</lastname>
+            
+            <age>29</age>
+            
+            <powers>
+            
+                <power>Radiation resistance</power>
+                
+                <power>Turning tiny</power>
+            
+            </powers>
+        
+        </member>
+        
+        <member name="Madame Uppercut" lastname="" age="39">
+        
+            <powers>
+            
+                <power>Million tonne punch</power>
+                
+                <power>Damage resistance</power>
+                
+                <cars>BMW</cars>
+            
+            </powers>
+        
+        </member>
+    
+    </members>
+
+</squad>
