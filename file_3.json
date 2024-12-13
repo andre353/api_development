@@ -1,0 +1,172 @@
+{
+    "openrpc": "1.2.6",
+    "info": {
+        "version": "1.0.0",
+        "title": "Secret Data Management API"
+    },
+    "servers": [
+        {
+            "name": "production",
+            "url": "https://api.example.com/{version}",
+            "variables": {
+                "version": {
+                    "default": "v1",
+                    "enum": [
+                        "v1",
+                        "v2"
+                    ]
+                }
+            }
+        }
+    ],
+    "methods": [
+        {
+            "name": "manageSecretData",
+            "summary": "Manage secure data storage",
+            "description": "Perform actions like add, get, and delete on secure data based on the user's access level.",
+            "params": [
+                {
+                    "name": "action",
+                    "description": "The action to be performed.",
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "add",
+                            "get",
+                            "delete"
+                        ]
+                    }
+                },
+                {
+                    "name": "dataID",
+                    "description": "Identifier for the data.",
+                    "schema": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "userData",
+                    "description": "Data to be added, optional.",
+                    "schema": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    }
+                },
+                {
+                    "name": "accessLevel",
+                    "description": "Level of user access.",
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "user",
+                            "admin",
+                            "superAdmin"
+                        ]
+                    }
+                },
+                {
+                    "name": "language",
+                    "description": "Language for response messages.",
+                    "schema": {
+                        "type": "string",
+                        "enum": [
+                            "en-US",
+                            "fr-FR",
+                            "es-ES"
+                        ]
+                    }
+                }
+            ],
+            "result": {
+                "name": "manageSecretDataResult",
+                "description": "The result of the action performed.",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "string",
+                            "enum": [
+                                "success",
+                                "failure"
+                            ]
+                        },
+                        "message": {
+                            "type": "string",
+                            "description": "A message describing the result."
+                        },
+                        "data": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "description": "Data returned if the action is 'get'."
+                        }
+                    }
+                }
+            },
+            "errors": [
+                {
+                    "name": "InvalidAction",
+                    "code": 100,
+                    "message": "Invalid action",
+                    "data": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "InvalidDataID",
+                    "code": 101,
+                    "message": "Invalid dataID",
+                    "data": {
+                        "type": "string"
+                    }
+                },
+                {
+                    "name": "UnauthorizedAccess",
+                    "code": 102,
+                    "message": "Unauthorized access",
+                    "data": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "examples": [
+                {
+                    "name": "addDataExample",
+                    "params": {
+                        "name": "action",
+                        "value": "add"
+                    },
+                    "result": {
+                        "name": "status",
+                        "value": "success"
+                    }
+                },
+                {
+                    "name": "getDataExample",
+                    "params": {
+                        "name": "action",
+                        "value": "get"
+                    },
+                    "result": {
+                        "name": "status",
+                        "value": "success"
+                    }
+                },
+                {
+                    "name": "deleteDataExample",
+                    "params": {
+                        "name": "action",
+                        "value": "delete"
+                    },
+                    "result": {
+                        "name": "status",
+                        "value": "success"
+                    }
+                }
+            ]
+        }
+    ]
+}
