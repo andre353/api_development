@@ -1,2 +1,4 @@
 .venv
 .vscode
+instance
+_pycache_
