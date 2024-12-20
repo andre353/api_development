@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book year="2022">
+        <title>The Art of Computer Programming, Volume 4A</title>
+        <author>Donald E. Knuth</author>
+        <publisher>Addison-Wesley Professional</publisher>
+    </book>
+    <book year="2021">
+        <title>Designing Data-Intensive Applications</title>
+        <author>Martin Kleppmann</author>
+        <publisher>Manning Publications</publisher>
+    </book>
+    <book year="2020">
+        <title>Clean Architecture: A Craftsman's Guide to Software Structure and Design</title>
+        <author>Robert C. Martin</author>
+        <publisher>Prentice Hall</publisher>
+    </book>
+</books>
