@@ -8,7 +8,7 @@ The API Development project provides a visual demonstration of skills and knowle
 - openRPC
 
 
-## Rest API Python последовательность
+## Rest API Python последовательность терминальных команд проекта для создания и наполнения bd sqlalchemy
 
 Создать общую папку
 в ней main.py

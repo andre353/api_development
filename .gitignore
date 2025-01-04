@@ -1,4 +1,6 @@
-.venv
+.venv/
+venv/
 .vscode
 instance
 _pycache_
+.pytest_cache
