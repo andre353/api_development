@@ -10,18 +10,19 @@ class Alphabet:
         return description
 
     def count_letters(self):
-        return len(self.letters) 
+        print(f"There are {len(self.letters)} letters in the {self.title} alphabet.")
+        return len(self.letters)
 
 
 class Cyrillic(Alphabet):
     def __init__(self, title, abbreviation, letters):
         super().__init__(title, abbreviation, letters)
-        self.language_group = "Slavic"
+        self.language_group = "Cyrl"
 
     def describe(self):
         description = f"The {self.title} alphabet contains the following letters: {self.letters}. It is abbreviated as {self.abbreviation}. It belongs to the {self.language_group} language group."
         return description
 
-serbian = Cyrillic("Serbian", "SR", "абвгдђежзијклмнњопрстћуфхцчџшыэ")           
-print(serbian.describe())     
-
+    def get_language_group(self):
+        print(f"The abbreviation of the language group is {self.language_group}.")
+        return self.language_group
