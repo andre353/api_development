@@ -19,4 +19,7 @@ class TestCircle:
         result = self.circle.perimeter()
         expected = 2 * math.pi * self.circle.radius
         assert result == expected   
-# pytest -s test/test_circle.py::TestCircle::test_perimeter        
+# pytest -s test/test_circle.py::TestCircle::test_perimeter  
+
+    def test_not_same_area_rectangle(self, my_rectangle):
+        assert self.circle.area() != my_rectangle.area()

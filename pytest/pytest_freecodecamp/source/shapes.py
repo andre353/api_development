@@ -25,6 +25,13 @@ class Rectangle(Shape):
         self.width = width
         self.height = height
 
+    def __eq__(self, other):
+        if not isinstance(other, Rectangle):
+            return False
+
+        value = self.width == other.width and self.height == other.height
+        return value
+
     def area(self):
         return self.width * self.height
 
