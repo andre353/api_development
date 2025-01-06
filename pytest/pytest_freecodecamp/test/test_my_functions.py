@@ -34,3 +34,8 @@ def test_add_slow():
 def test_add_skip():
     result = my_functions.add(1, 2)
     assert result == 3
+
+@pytest.mark.xfail(reason="This feature is currently broken")
+def test_divide_zero_broken():
+    result = my_functions.divide(1, 0)
+    assert result == 0
