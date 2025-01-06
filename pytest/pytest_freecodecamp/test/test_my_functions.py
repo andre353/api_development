@@ -1,3 +1,4 @@
+import time
 import pytest
 import source.my_functions as my_functions
 
@@ -16,3 +17,9 @@ def test_add_strings():
 
 # create pytest.ini in root, write folder to run
 # pytest test/test_my_functions.py 
+
+@pytest.mark.slow
+def test_add_slow():
+    time.sleep(5)
+    result = my_functions.add(1, 2)
+    assert result == 3
