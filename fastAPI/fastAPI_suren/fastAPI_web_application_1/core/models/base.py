@@ -18,7 +18,7 @@ class Base(DeclarativeBase):
     def __tablename__(cls) -> str:
         # return cls.__name__.lower()
         # если с префиксом и во мн ч
-        return f"shop_app__{cls.__name__.lower()}s"
+        return f"{cls.__name__.lower()}s"
 
 
     id: Mapped[int] = mapped_column(primary_key=True)
