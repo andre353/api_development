@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from typing import Optional
 # import uvicorn
 
 app = FastAPI()
@@ -14,7 +15,7 @@ async def index():
 
 # /greet?name=John - query parameter
 @app.get('/greet')    
-async def greet_name(name: str) -> dict:
+async def greet_name(name: Optional[str] = "User") -> dict:
     return {"message": f"Hello {name}"}
 
 # if __name__ == "__main__":
