@@ -7,7 +7,13 @@ app = FastAPI()
 async def index():
     return {"messsage":"Hello World"}
 
-@app.get('/greet/{name}')    
+# /greet/John - path parameter
+# @app.get('/greet/{name}')    
+# async def greet_name(name: str) -> dict:
+#     return {"message": f"Hello {name}"}
+
+# /greet?name=John - query parameter
+@app.get('/greet')    
 async def greet_name(name: str) -> dict:
     return {"message": f"Hello {name}"}
 
