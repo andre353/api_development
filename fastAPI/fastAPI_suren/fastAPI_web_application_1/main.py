@@ -18,10 +18,6 @@ app = FastAPI(lifespan=lifespan)
 app.include_router(items_router)
 app.include_router(users_router)
 
-# при запуске приложения запускаем создание новой базы данных
-
-
-
 @app.get("/")
 def hello_index():
     return {"message": "Hello index"}
