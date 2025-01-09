@@ -1,5 +1,6 @@
 .venv/
 venv/
+venv_p/
 oopvenv
 .vscode
 instance
