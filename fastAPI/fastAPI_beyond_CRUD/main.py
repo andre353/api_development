@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from typing import Optional
+from pydantic import BaseModel
 
 # import uvicorn
 
@@ -18,9 +19,21 @@ async def index():
 
 
 # /greet?name=John - query parameter
+# /greet?name=John&age=31 - query parameters
 @app.get("/greet")
-async def greet_name(name: Optional[str] = "User") -> dict:
-    return {"message": f"Hello {name}"}
+async def greet_name(name: Optional[str] = "User", age: int = 0) -> dict:
+    return {"message": f"Hello {name}, your age is {age}"}
+
+
+# a Pydantic model with serialization to JSON format
+class BookCreateModel(BaseModel):
+    title: str
+    author: str
+
+
+@app.post("/create_book")
+async def create_book(book_data: BookCreateModel):
+    return {"title": book_data.title, "author": book_data.author}
 
 
 # if __name__ == "__main__":
